@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart</title>
+  </head>
+  <body>
+    <h1>Cart</h1>
+    <table>
+      <tr>
+        <th>Product Name</th>
+        <th>Product Description</th>
+        <th>Price</th>
+      </tr>
+      {% for row in product %}
+      <tr>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td colspan="2">Total:</td>
+        <td>{{ product|sum(attribute='3') }}</td>
+      </tr>
+    </table>
+  </body>
+</html>
